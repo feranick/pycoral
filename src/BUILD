@@ -93,7 +93,7 @@ pybind_extension(
         "@libcoral//coral/pipeline:common",
         "@libcoral//coral/pipeline:pipelined_model_runner",
         "@libedgetpu//tflite/public:edgetpu",
-        "@local_config_python//:numpy_headers",
+        "@org_tensorflow//third_party/py/numpy:headers",
         "@local_config_python//:python_headers",
         "@org_tensorflow//tensorflow/lite:stateful_error_reporter",
         "@org_tensorflow//tensorflow/lite/c:common",
