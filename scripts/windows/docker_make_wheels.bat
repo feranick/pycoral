@@ -79,3 +79,25 @@ docker run -m %MEM_KB%KB --cpus %NUMBER_OF_PROCESSORS% --rm ^
     -w c:\edgetpu ^
     -e BAZEL_OUTPUT_BASE=c:\temp\edgetpu ^
     -e PYTHON=c:\python39\python.exe edgetpu-win scripts\windows\build_wheel.bat
+    
+rem Build Python 3.10 wheel
+call %ROOTDIR%\scripts\windows\clean.bat
+docker run -m %MEM_KB%KB --cpus %NUMBER_OF_PROCESSORS% --rm ^
+    -v %ROOTDIR%:c:\edgetpu ^
+    -v %TEST_DATA_DIR%:c:\edgetpu\test_data ^
+    -v %LIBCORAL_DIR%:c:\edgetpu\libcoral ^
+    -v %LIBEDGETPU_DIR%:c:\edgetpu\libedgetpu ^
+    -w c:\edgetpu ^
+    -e BAZEL_OUTPUT_BASE=c:\temp\edgetpu ^
+    -e PYTHON=c:\python310\python.exe edgetpu-win scripts\windows\build_wheel.bat
+    
+rem Build Python 3.11 wheel
+call %ROOTDIR%\scripts\windows\clean.bat
+docker run -m %MEM_KB%KB --cpus %NUMBER_OF_PROCESSORS% --rm ^
+    -v %ROOTDIR%:c:\edgetpu ^
+    -v %TEST_DATA_DIR%:c:\edgetpu\test_data ^
+    -v %LIBCORAL_DIR%:c:\edgetpu\libcoral ^
+    -v %LIBEDGETPU_DIR%:c:\edgetpu\libedgetpu ^
+    -w c:\edgetpu ^
+    -e BAZEL_OUTPUT_BASE=c:\temp\edgetpu ^
+    -e PYTHON=c:\python311\python.exe edgetpu-win scripts\windows\build_wheel.bat
