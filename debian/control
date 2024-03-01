@@ -16,12 +16,12 @@ Description: Example code for Coral Python API
 Package: python3-pycoral
 Architecture: any
 Depends: libc6,
-         libedgetpu1-std (= 16.0) | libedgetpu1 (= 16.0),
+         libedgetpu1-std (= 16.0tf2.16.0-1) | libedgetpu1 (= 16.0tf2.16.0-1),
          libgcc1,
          libstdc++6,
          python3-numpy,
          python3-pil,
-         python3-tflite-runtime (= 2.5.0.post1),
+         python3-tflite-runtime (= 2.16.0),
          ${misc:Depends},
          ${python3:Depends}
 Description: Coral Python API

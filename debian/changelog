@@ -1,3 +1,11 @@
+coral (2.0.0tf2.16.0-rc0-1) stable; urgency=medium
+
+  * Code refactoring for compatibility with current versions of:
+    - TensorFlow, Bazel, Python, OS
+  * Built against TF2.16.0
+
+ -- Nicola Ferralis <feranick@hotmail.com>  Fri, 01 Mar 2024 11:20:28 -0500
+
 coral (2.0.0) stable; urgency=medium
 
   * pycoral grouper release
