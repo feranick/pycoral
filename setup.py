@@ -54,6 +54,8 @@ setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Scientific/Engineering',
         'Topic :: Scientific/Engineering :: Mathematics',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
@@ -69,9 +71,9 @@ setup(
         ]
     },
     install_requires=[
-        'numpy>=1.16.0',
-        'Pillow>=4.0.0',
-        'tflite-runtime==2.5.0.post1',
+        'numpy>=1.24.0',
+        'Pillow>=10.0.0',
+        'tflite-runtime==2.16.0-rc0',
     ],
     **({
         'has_ext_modules': lambda: True
