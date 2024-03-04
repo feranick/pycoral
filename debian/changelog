@@ -1,4 +1,4 @@
-coral (2.0.0tf2.16.0-rc0-1) stable; urgency=medium
+coral (2.0.1) stable; urgency=medium
 
   * Code refactoring for compatibility with current versions of:
     - TensorFlow, Bazel, Python, OS
