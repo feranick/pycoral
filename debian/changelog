@@ -2,7 +2,7 @@ coral (2.0.1) stable; urgency=medium
 
   * Code refactoring for compatibility with current versions of:
     - TensorFlow, Bazel, Python, OS
-  * Built against TF2.16.0
+  * Built against TF2.16.1
 
  -- Nicola Ferralis <feranick@hotmail.com>  Fri, 01 Mar 2024 11:20:28 -0500
 

@@ -17,27 +17,27 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # ==================================================================
 
-# Add definition of tensorflow version 2.16.1 stable.
-#http_archive(
-#        name = "org_tensorflow",
-#        urls = [
-#            "https://github.com/tensorflow/tensorflow/archive/5bc9d26649cca274750ad3625bd93422617eed4b.tar.gz",
-#        ],
-#        sha256 = "fe592915c85d1a89c20f3dd89db0772ee22a0fbda78e39aa46a778d638a96abc",
-#        strip_prefix = "tensorflow-" + "5bc9d26649cca274750ad3625bd93422617eed4b",
-#        )
+# Add definition of tensorflow version 2.16.1 stable with visibility patch
+http_archive(
+        name = "org_tensorflow",
+        urls = [
+            "https://github.com/tensorflow/tensorflow/archive/dfe0c76197a6cbebf9490696d2b15187296a6827.tar.gz",
+        ],
+        sha256 = "529b9bda87908bc0f5eeaedcfbe7cb7a78fd9f52a0a1c50ffa0e06b5320dceef",
+        strip_prefix = "tensorflow-" + "dfe0c76197a6cbebf9490696d2b15187296a6827",
+        )
 
 # Add definition of tensorflow version 2.17.0-dev with visibility commit for SCHEMA.
 # Reference: https://github.com/tensorflow/tensorflow/issues/63074
 # This will be removed once TF 2.17.0 is stable.
-http_archive(
-        name = "org_tensorflow",
-        urls = [
-            "https://github.com/tensorflow/tensorflow/archive/79ecb3f8bb6bd73f0115fa9a97b630a6f745a426.tar.gz",
-        ],
-        sha256 = "488dcc18e8d3896a54c9abdc657c43a580d70d72d69e6d6db07a4be95cdfbc3e",
-        strip_prefix = "tensorflow-" + "79ecb3f8bb6bd73f0115fa9a97b630a6f745a426",
-        )
+#http_archive(
+#        name = "org_tensorflow",
+#        urls = [
+#            "https://github.com/tensorflow/tensorflow/archive/79ecb3f8bb6bd73f0115fa9a97b630a6f745a426.tar.gz",
+#        ],
+#        sha256 = "488dcc18e8d3896a54c9abdc657c43a580d70d72d69e6d6db07a4be95cdfbc3e",
+#        strip_prefix = "tensorflow-" + "79ecb3f8bb6bd73f0115fa9a97b630a6f745a426",
+#        )
 
 http_archive(
     name = "bazel_skylib",
