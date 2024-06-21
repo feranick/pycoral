@@ -18,7 +18,7 @@ set -ex
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly MAKEFILE="${SCRIPT_DIR}/../Makefile"
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64 armv7a}"
-PYTHON_VERSIONS="36 37 38 39 310 311"
+PYTHON_VERSIONS="38 39 310 311"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -39,8 +39,6 @@ done
 
 function docker_image {
   case $1 in
-    36) echo "ubuntu:18.04" ;;
-    37) echo "debian:buster" ;;
     38) echo "ubuntu:20.04" ;;
     39) echo "debian:bullseye" ;;
     310) echo "ubuntu:22.04" ;;
