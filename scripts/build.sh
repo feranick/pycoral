@@ -50,7 +50,7 @@ function docker_image {
 for python_version in ${PYTHON_VERSIONS}; do
   make DOCKER_CPUS="${DOCKER_CPUS}" \
        DOCKER_IMAGE=$(docker_image "${python_version}") \
-       DOCKER_TARGETS="pybind tflite wheel tflite-wheel" \
+       DOCKER_TARGETS="pybind wheel" \
        -f "${MAKEFILE}" \
        docker-build
 done
