@@ -113,7 +113,7 @@ echo "__version__ = '$(1)'" \
 echo "__git_version__ = '$(TENSORFLOW_COMMIT)'" \
      >> $(TFLITE_RUNTIME_DIR)/tflite_runtime/__init__.py
 cp $(MAKEFILE_DIR)/tflite_runtime/$(2) \
-   $(TENSORFLOW_DIR)/tensorflow/lite/python/{interpreter.py,metrics_interface.py,metrics_portable.py} \
+   $(TENSORFLOW_DIR)/tensorflow/lite/python/{interpreter.py,metrics/metrics_interface.py,metrics/metrics_portable.py} \
    $(TFLITE_RUNTIME_DIR)/tflite_runtime/
 sed -e "s/'numpy.*/'numpy>=1.16.0',/" $(TENSORFLOW_DIR)/tensorflow/lite/tools/pip_package/setup_with_binary.py \
     > $(TFLITE_RUNTIME_DIR)/setup.py
@@ -162,7 +162,7 @@ tflite:
 	mkdir -p $(TFLITE_WRAPPER_OUT_DIR)
 	cp -f $(BAZEL_OUT_DIR)/external/org_tensorflow/tensorflow/lite/python/interpreter_wrapper/_pywrap_tensorflow_interpreter_wrapper.so \
 	      $(TFLITE_WRAPPER_OUT_DIR)/$(TFLITE_WRAPPER_NAME)
-	cp -f $(TENSORFLOW_DIR)/tensorflow/lite/python/{interpreter.py,metrics_interface.py,metrics_portable.py} \
+	cp -f $(TENSORFLOW_DIR)/tensorflow/lite/python/{interpreter.py,metrics/metrics_interface.py,metrics/metrics_portable.py} \
 	      $(TFLITE_WRAPPER_OUT_DIR)
 	touch $(TFLITE_WRAPPER_OUT_DIR)/__init__.py
 
@@ -198,6 +198,7 @@ wheel-all:
 tflite-wheel: tflite
 	$(call prepare_tflite_runtime,$(TFLITE_RUNTIME_VERSION),$(TFLITE_WRAPPER_NAME))
 	(cd $(TFLITE_RUNTIME_DIR) && \
+	 export PROJECT_NAME=tflite_runtime && \
 	 export PACKAGE_VERSION=$(TFLITE_RUNTIME_VERSION) && \
 	 $(PYTHON) setup.py \
 	     clean --all \
@@ -208,6 +209,7 @@ tflite-deb:
 	$(call prepare_tflite_runtime,$(TFLITE_RUNTIME_VERSION),*.so)
 	$(call prepare_tflite_runtime_debian,$(TFLITE_RUNTIME_VERSION))
 	(cd $(TFLITE_RUNTIME_DIR) && \
+	 export PROJECT_NAME=tflite_runtime && \
 	 export PACKAGE_VERSION=$(TFLITE_RUNTIME_VERSION) && \
 	 dpkg-buildpackage -rfakeroot -us -uc -tc -b &&  \
 	 dpkg-buildpackage -rfakeroot -us -uc -tc -b -a armhf -d && \
