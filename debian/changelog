@@ -1,6 +1,6 @@
 coral (2.0.2) stable; urgency=medium
 
-  * Built against TF2.17.1
+  * Built against TF 2.17.0
 
  -- Nicola Ferralis <feranick@hotmail.com>  Fri, 21 Jun 2024 04:58:31 -0400
 
