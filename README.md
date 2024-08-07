@@ -66,13 +66,14 @@ Or to build just this library, follow these steps:
 
 https://www.tensorflow.org/install/source
 
-Run: 
+Run the following to generate Python library wheel:
+
 ```
-make pybind
-make wheel
+TF_PYTHON_VERSION=3.xx make pybind
+TF_PYTHON_VERSION=3.xx make wheel
 ```
 
-to generate Python library wheel and then:
+where `3.xx` refers to the version of Python you are compiling against (3.10, 3.11, 3.12, etc). Then run:
 
 ```
 pip3 install
