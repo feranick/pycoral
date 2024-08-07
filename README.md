@@ -51,9 +51,28 @@ Or to build just this library, follow these steps:
     git submodule init && git submodule update
     ```
 
+## Compilation using Docker:
+
 1.  Run `scripts/build.sh` to build pybind11-based native layer for different
     Linux architectures. Build is Docker-based, so you need to have it
     installed.
 
 1.  Run `make wheel` to generate Python library wheel and then `pip3 install
-    $(ls dist/*.whl)` to install it
+    $(ls dist/*.whl)` to install it.
+    
+## Native Compilation:
+
+Run: 
+```
+make pybind
+make wheel
+```
+
+to generate Python library wheel and then:
+
+```
+pip3 install
+$(ls dist/*.whl)
+```
+
+to install it.
