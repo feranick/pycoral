@@ -62,6 +62,10 @@ Or to build just this library, follow these steps:
     
 ## Native Compilation:
 
+`bazel` is required for native compilation. The correct and required version of `bazel` for the specific version of TensorFlow is listed here:
+
+https://www.tensorflow.org/install/source
+
 Run: 
 ```
 make pybind
