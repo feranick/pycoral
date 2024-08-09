@@ -40,7 +40,7 @@ Or to build just this library, follow these steps:
 1.  Clone this repo and include submodules:
 
     ```
-    git clone --recurse-submodules https://github.com/google-coral/pycoral
+    git clone --recurse-submodules https://github.com/feranick/pycoral
     ```
 
     If you already cloned without the submodules. You can add them with this:
