@@ -57,7 +57,7 @@ Or to build just this library, follow these steps:
 
 ```
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64 armv7a}"
-PYTHON_VERSIONS="3.8 3.9 3.10 3.11 3.12"
+PYTHON_VERSIONS="3.9 3.10 3.11 3.12"
 ```
 
 For example if compiling for only `x86_64` and `python 3.10`, the above line should be:
