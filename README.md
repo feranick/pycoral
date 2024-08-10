@@ -53,7 +53,7 @@ Or to build just this library, follow these steps:
 
 ## Compilation using Docker:
 
-1. Edit the following lines in `scripts/build.sh` to reflect your compilation targets:
+* Edit the following lines in `scripts/build.sh` to reflect your compilation targets:
 
 ```
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64 armv7a}"
@@ -80,11 +80,11 @@ readonly DOCKER_CPUS="${DOCKER_CPUS:=k8}"
 PYTHON_VERSIONS="310 312"
 ```
 
-1.  Run `scripts/build.sh` to build pybind11-based native layer for different
+* Run `scripts/build.sh` to build pybind11-based native layer for different
     Linux architectures. Build is Docker-based, so you need to have it
     installed.
 
-1.  Run `make wheel` to generate Python library wheel and then `pip3 install
+* Run `make wheel` to generate Python library wheel and then `pip3 install
     $(ls dist/*.whl)` to install it.
     
 ## Native Compilation:
