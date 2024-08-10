@@ -57,27 +57,27 @@ Or to build just this library, follow these steps:
 
 ```
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64 armv7a}"
-PYTHON_VERSIONS="38 39 310 311 312"
+PYTHON_VERSIONS="3.8 3.9 3.10 3.11 3.12"
 ```
 
 For example if compiling for only `x86_64` and `python 3.10`, the above line should be:
 ```
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8}"
-PYTHON_VERSIONS="310"
+PYTHON_VERSIONS="3.10"
 ```
   
 For multiple architectures:
 
 ```
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64}"
-PYTHON_VERSIONS="310"
+PYTHON_VERSIONS="3.10"
 ```
 
 For multiple versions of phyton:
 
 ```
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8}"
-PYTHON_VERSIONS="310 312"
+PYTHON_VERSIONS="3.10 3.12"
 ```
 
 * Run `scripts/build.sh` to build pybind11-based native layer for different

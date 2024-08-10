@@ -18,7 +18,7 @@ set -ex
 readonly SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 readonly MAKEFILE="${SCRIPT_DIR}/../Makefile"
 readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64 armv7a}"
-PYTHON_VERSIONS="38 39 310 311 312"
+PYTHON_VERSIONS="3.8 3.9 3.10 3.11 3.12"
 
 while [[ $# -gt 0 ]]; do
   case "$1" in
@@ -39,17 +39,17 @@ done
 
 function docker_image {
   case $1 in
-    38) echo "ubuntu:20.04"; TF_PYTHON_VERSION="3.8" ;;
-    39) echo "debian:bullseye"; TF_PYTHON_VERSION="3.9" ;;
-    310) echo "ubuntu:22.04"; TF_PYTHON_VERSION="3.10" ;;
-    311) echo "debian:bookworm"; TF_PYTHON_VERSION="3.11";;
-    312) echo "ubuntu:24.04"; TF_PYTHON_VERSION="3.12" ;;
+    3.8) echo "ubuntu:20.04"; TF_PYTHON_VERSION="3.8" ;;
+    3.9) echo "debian:bullseye"; TF_PYTHON_VERSION="3.9" ;;
+    3.10) echo "ubuntu:22.04"; TF_PYTHON_VERSION="3.10" ;;
+    3.11) echo "debian:bookworm"; TF_PYTHON_VERSION="3.11";;
+    3.12) echo "ubuntu:24.04"; TF_PYTHON_VERSION="3.12" ;;
     *) echo "Unsupported python version: $1" 1>&2; exit 1 ;;
   esac
 }
 
 for python_version in ${PYTHON_VERSIONS}; do
-  make DOCKER_TF_PYTHON_VERSION=${TF_PYTHON_VERSION} \
+  make DOCKER_TF_PYTHON_VERSION="${python_version}" \
        DOCKER_CPUS="${DOCKER_CPUS}" \
        DOCKER_IMAGE=$(docker_image "${python_version}") \
        DOCKER_TARGETS="pybind wheel" \
