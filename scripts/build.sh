@@ -39,17 +39,18 @@ done
 
 function docker_image {
   case $1 in
-    38) echo "ubuntu:20.04" ;;
-    39) echo "debian:bullseye" ;;
-    310) echo "ubuntu:22.04" ;;
-    311) echo "debian:bookworm" ;;
-    312) echo "ubuntu:24.04" ;;
+    38) echo "ubuntu:20.04"; TF_PYTHON_VERSION="3.8" ;;
+    39) echo "debian:bullseye"; TF_PYTHON_VERSION="3.9" ;;
+    310) echo "ubuntu:22.04"; TF_PYTHON_VERSION="3.10" ;;
+    311) echo "debian:bookworm"; TF_PYTHON_VERSION="3.11";;
+    312) echo "ubuntu:24.04"; TF_PYTHON_VERSION="3.12" ;;
     *) echo "Unsupported python version: $1" 1>&2; exit 1 ;;
   esac
 }
 
 for python_version in ${PYTHON_VERSIONS}; do
-  make DOCKER_CPUS="${DOCKER_CPUS}" \
+  make DOCKER_TF_PYTHON_VERSION=${TF_PYTHON_VERSION} \
+       DOCKER_CPUS="${DOCKER_CPUS}" \
        DOCKER_IMAGE=$(docker_image "${python_version}") \
        DOCKER_TARGETS="pybind wheel" \
        -f "${MAKEFILE}" \
