@@ -53,6 +53,33 @@ Or to build just this library, follow these steps:
 
 ## Compilation using Docker:
 
+1. Edit the following lines in `scripts/build.sh` to reflect your compilation targets:
+
+```
+readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64 armv7a}"
+PYTHON_VERSIONS="38 39 310 311 312"
+```
+
+For example if compiling for only `x86_64` and `python 3.10`, the above line should be:
+```
+readonly DOCKER_CPUS="${DOCKER_CPUS:=k8}"
+PYTHON_VERSIONS="310"
+```
+  
+For multiple architectures:
+
+```
+readonly DOCKER_CPUS="${DOCKER_CPUS:=k8 aarch64}"
+PYTHON_VERSIONS="310"
+```
+
+For multiple versions of phyton:
+
+```
+readonly DOCKER_CPUS="${DOCKER_CPUS:=k8}"
+PYTHON_VERSIONS="310 312"
+```
+
 1.  Run `scripts/build.sh` to build pybind11-based native layer for different
     Linux architectures. Build is Docker-based, so you need to have it
     installed.
