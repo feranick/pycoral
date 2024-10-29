@@ -1,3 +1,9 @@
+oral (2.0.3) stable; urgency=medium
+
+  * Built against TF 2.17.1
+
+ -- Nicola Ferralis <feranick@hotmail.com>  Mon, 28 Oct 2024 09:41:18 -0400
+
 coral (2.0.2) stable; urgency=medium
 
   * Built against TF 2.17.0
