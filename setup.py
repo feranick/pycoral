@@ -50,7 +50,6 @@ setup(
         'Intended Audience :: Science/Research',
         'License :: OSI Approved :: Apache Software License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
@@ -70,9 +69,9 @@ setup(
         ]
     },
     install_requires=[
-        'numpy>=1.24.0',
+        'numpy>=1.24.4',
         'Pillow>=10.0.0',
-        'tflite-runtime>=2.17.0-rc0',
+        'tflite-runtime>=2.17.1',
     ],
     **({
         'has_ext_modules': lambda: True
