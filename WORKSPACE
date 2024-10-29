@@ -17,26 +17,14 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # ==================================================================
 
-# Add definition of tensorflow version 2.16.1 stable.
-#http_archive(
-#        name = "org_tensorflow",
-#        urls = [
-#            "https://github.com/tensorflow/tensorflow/archive/5bc9d26649cca274750ad3625bd93422617eed4b.tar.gz",
-#        ],
-#        sha256 = "fe592915c85d1a89c20f3dd89db0772ee22a0fbda78e39aa46a778d638a96abc",
-#        strip_prefix = "tensorflow-" + "5bc9d26649cca274750ad3625bd93422617eed4b",
-#        )
-
-# Add definition of tensorflow version 2.17.0-dev with visibility commit for SCHEMA.
-# Reference: https://github.com/tensorflow/tensorflow/issues/63074
-# This will be removed once TF 2.17.0 is stable.
+# Add definition of tensorflow version 2.17.1 stable.
 http_archive(
         name = "org_tensorflow",
         urls = [
-            "https://github.com/tensorflow/tensorflow/archive/79ecb3f8bb6bd73f0115fa9a97b630a6f745a426.tar.gz",
+            "https://github.com/tensorflow/tensorflow/archive/3c92ac03cab816044f7b18a86eb86aa01a294d95.tar.gz",
         ],
-        sha256 = "488dcc18e8d3896a54c9abdc657c43a580d70d72d69e6d6db07a4be95cdfbc3e",
-        strip_prefix = "tensorflow-" + "79ecb3f8bb6bd73f0115fa9a97b630a6f745a426",
+        sha256 = "317dd95c4830a408b14f3e802698eb68d70d81c7c7cfcd3d28b0ba023fe84a68",
+        strip_prefix = "tensorflow-" + "3c92ac03cab816044f7b18a86eb86aa01a294d95",
         )
 
 http_archive(
