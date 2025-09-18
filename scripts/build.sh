@@ -43,7 +43,7 @@ function docker_image {
     3.10) echo "ubuntu:22.04";;
     3.11) echo "debian:bookworm";;
     3.12) echo "ubuntu:24.04";;
-    3.13) echo "debian.trixie";;
+    3.13) echo "debian:trixie";;
     *) echo "Unsupported python version: $1" 1>&2; exit 1 ;;
   esac
 }
