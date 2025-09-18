@@ -17,14 +17,16 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 # ==================================================================
 
-# Add definition of tensorflow version 2.17.1 stable.
+# Add definition of tensorflow version 2.18.1 stable.
 http_archive(
         name = "org_tensorflow",
         urls = [
-            "https://github.com/tensorflow/tensorflow/archive/3c92ac03cab816044f7b18a86eb86aa01a294d95.tar.gz",
+            "https://github.com/tensorflow/tensorflow/archive/cb64295ec7308f770b22db6047a1e755b35b7bee.tar.gz",
         ],
-        sha256 = "317dd95c4830a408b14f3e802698eb68d70d81c7c7cfcd3d28b0ba023fe84a68",
-        strip_prefix = "tensorflow-" + "3c92ac03cab816044f7b18a86eb86aa01a294d95",
+        sha256 = "5fcca4ec0732e146547fc26f6966cf92236c2f85a9e086b85c83d303e2c38980",
+        strip_prefix = "tensorflow-" + "cb64295ec7308f770b22db6047a1e755b35b7bee",
+        patches = ["//patches:add_configure_cuda.diff"],
+        patch_args = ["-p1"],
         )
 
 http_archive(
